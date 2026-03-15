@@ -1,0 +1,160 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+}
+
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 1s ease;
+  position: relative;
+  color: #fff;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+}
+
+
+.weather-container {
+  position: relative;
+  z-index: 1; 
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.weather-container:hover {
+  transform: scale(1.03);
+}
+
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+
+.city-input {
+  width: 70%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.city-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.search-btn {
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #3730a3;
+  transform: scale(1.05);
+}
+
+
+.weather-info {
+  margin-top: 1.5rem;
+  animation: fadeIn 1s ease;
+}
+
+.weather-info .city {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.weather-info .temp {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.weather-info .condition {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.weather-info .day-night {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+/* Error message */
+.error {
+  margin-top: 1rem;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+/* Footer styling */
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  font-weight: bold;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .weather-container {
+    padding: 1.5rem 2rem;
+  }
+  .city-input {
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  .search-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
