@@ -1,0 +1,4 @@
+[build]
+  base = "weather-app"       # folder with package.json
+  publish = "weather-app/dist" # output folder from Vite build
+  command = "npm run build"
