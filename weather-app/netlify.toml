@@ -1,4 +1,4 @@
 [build]
-  base = "weather-app"
-  publish = "weather-app/dist"
-  command = "npm ci && npm run build"
+  base = "weather-app"          # folder with package.json
+  publish = "dist"              # just "dist" inside the base folder
+  command = "npm run build"
