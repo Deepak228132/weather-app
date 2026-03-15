@@ -9,8 +9,7 @@ function App() {
   ); 
   const [error, setError] = useState("");
 
-  const apiKey = "a105b475a5bcd33f9a3c9ddcaccc2516"; 
-
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
   const fetchWeather = async () => {
     if (!city) return;
     try {
